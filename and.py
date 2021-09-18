@@ -15,4 +15,8 @@ if __name__ == '__main__': ##entry point
     ETA = 0.3 # learning rate between 0 and 1 (assume)
     EPOCHS = 10
 
+    
+
     main(data=AND, eta=ETA, epoch=EPOCHS, file_name="and.model", plot_name="and.png")
+
+    

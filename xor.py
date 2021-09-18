@@ -12,7 +12,7 @@ if __name__ == '__main__': ##entry point
         "y": [0, 1, 1, 0]
     }
 
-    ETA = 0.8 # learning rate between 0 and 1 (assume)
-    EPOCHS = 30
+    ETA = 0.3 # learning rate between 0 and 1 (assume)
+    EPOCHS = 50
 
     main(data=XOR, eta=ETA, epoch=EPOCHS, file_name="xor.model", plot_name="xor.png")

@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
 
-def createModel(data, eta, epoch, file_name, plot_name):
-    
+def createModel(data, eta, epoch, file_name, plot_name, no_of_input=2):    
+    with open("results.txt",'a') as f:
+        f.write("BEGIN CREATION :"+file_name+"\n")        
+        f.write("****" * 10+"\n")
+        f.write("eta = "+str(eta)+" epochs ="+str(epoch)+"\n")
 
     df = pd.DataFrame(data)
 
@@ -15,17 +18,21 @@ def createModel(data, eta, epoch, file_name, plot_name):
     print(X)
     print(y)    
 
-    model = Perceptron(eta, epoch)
+    model = Perceptron(eta, epoch, no_of_input)
 
     model.fit(X, y)
 
-    _ = model.total_loss()
-
     model.predict(X)
+
+    model.total_loss()
 
     save_model(model, file_name)
 
-    save_plot(df, plot_name, model)
+    with open("results.txt",'a') as f:
+        f.write("****" * 10+"\n")
+
+    if no_of_input == 2:
+      save_plot(df, plot_name, model)
 
 def prepare_data(df):
   X = df.drop("y",axis=1)
@@ -45,6 +52,7 @@ def save_plot(df, file_name, model):
 
   def _create_base_plot(df):
     #plot scatter plot of df 
+    
     df.plot(kind="scatter", x="x1", y="x2", c="y", s=100, cmap="winter")
     #draw h and v line
     plt.axhline(y=0, color="black", linestyle="--", linewidth=1)
@@ -57,7 +65,7 @@ def save_plot(df, file_name, model):
     cmap = ListedColormap(colors[: len(np.unique(y))])  #select colours for unique y
 
     X = X.values # take x as a array
-    x1 = X[:, 0]  #get first column
+    x1 = X[:, 0]  #get first column    
     x2 = X[:, 1]  #get second column
     #print(f"X = \n{X}")
     #print(f"x1 = {x1}")
@@ -68,13 +76,9 @@ def save_plot(df, file_name, model):
     x2_min, x2_max = x2.min() -1 , x2.max() + 1  
 
     #get inbetween points from -1 to +2
+    
     xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution), 
-                           np.arange(x2_min, x2_max, resolution))
-    #print(f"xx1 = \n{xx1}")
-    #print(f"xx2 = \n{xx2}")
-
-    #print(f"xx1.ravel() = \n{xx1.ravel()}")
-    #print(f"xx2.ravel() = \n{xx2.ravel()}")
+                          np.arange(x2_min, x2_max, resolution))
     #change to a flattened array and predict
     Z = classfier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
     #reshape to original array
@@ -84,6 +88,15 @@ def save_plot(df, file_name, model):
     plt.xlim(xx1.min(), xx1.max())
     plt.ylim(xx2.min(), xx2.max())
     plt.plot()
+    
+    #print(f"xx1 = \n{xx1}")
+    #print(f"xx2 = \n{xx2}")
+
+    #print(f"xx1.ravel() = \n{xx1.ravel()}")
+    #print(f"xx2.ravel() = \n{xx2.ravel()}")
+    
+    
+    
 
   X, y = prepare_data(df)
   _create_base_plot(df)

@@ -1,8 +1,8 @@
 import numpy as np
 
 class Perceptron:
-  def __init__(self,eta,epochs):
-    self.weights = np.random.randn(3) *1e-4 #small weight initialization
+  def __init__(self,eta,epochs,no_of_input):
+    self.weights = np.random.randn(no_of_input+1) *1e-4 #small weight initialization
     print(f"initial weights before training: {self.weights}")
     self.eta = eta #learning rate
     self.epochs = epochs #no of epochs
@@ -37,5 +37,16 @@ class Perceptron:
 
   def total_loss(self):
     total_loss = np.sum(self.error)
-    print(f"total loss : {total_loss}")
+    print(f"Total loss : {total_loss}")
+
+    if total_loss == 0:
+      msg = "MODEL CREATION SUCCESSFUL"
+    else:
+      msg = "MODEL CREATION FAILED, Try with different, epochs, learning rate or a different approach altogether"
+    print(msg)
+
+    with open("results.txt",'a') as f:
+        f.write("total loss = "+str(total_loss)+"\n")
+        f.write(msg+"\n")
+    
     return total_loss
