@@ -88,3 +88,21 @@ eta = 0.3 epochs =50
 total loss = 2
 MODEL CREATION FAILED, Try with different, epochs, learning rate or a different approach altogether
 ****************************************
+BEGIN CREATION :nand.model
+****************************************
+eta = 0.3 epochs =10
+total loss = 0
+MODEL CREATION SUCCESSFUL
+****************************************
+BEGIN CREATION :nor.model
+****************************************
+eta = 0.3 epochs =10
+total loss = 0
+MODEL CREATION SUCCESSFUL
+****************************************
+BEGIN CREATION :xnor.model
+****************************************
+eta = 0.3 epochs =10
+total loss = 2
+MODEL CREATION FAILED, Try with different, epochs, learning rate or a different approach altogether
+****************************************
