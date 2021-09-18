@@ -1,25 +1,18 @@
-from utils.model import Perceptron
-from utils.all_utils import *
+from utils.all_utils import createModel
 
-OR = {
-    "x1": [0,0,1,1],
-    "x2": [0,1,0,1],
-    "y": [0, 1, 1, 1]
-}
+def main(data, eta, epoch, file_name, plot_name):
+    createModel(data, eta, epoch, file_name, plot_name)
 
-df_OR = pd.DataFrame(OR)
+    
 
-X,y = prepare_data(df_OR)
-print(X)
-print(y)
+if __name__ == '__main__': ##entry point
+    OR = {
+        "x1": [0,0,1,1],
+        "x2": [0,1,0,1],
+        "y": [0, 1, 1, 1]
+    }
 
-ETA = 0.3 # learning rate between 0 and 1 (assume)
-EPOCHS = 10
+    ETA = 0.3 # learning rate between 0 and 1 (assume)
+    EPOCHS = 10
 
-model_OR = Perceptron(eta=ETA, epochs=EPOCHS)
-
-model_OR.fit(X, y)
-
-_ = model_OR.total_loss()
-
-model_OR.predict(X)
+    main(data=OR, eta=ETA, epoch=EPOCHS, file_name="or.model", plot_name="or.png")

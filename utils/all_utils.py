@@ -1,3 +1,32 @@
+import os
+import joblib
+import pandas as pd
+from utils.model import Perceptron
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.colors import ListedColormap
+
+def createModel(data, eta, epoch, file_name, plot_name):
+    
+
+    df = pd.DataFrame(data)
+
+    X,y = prepare_data(df)
+    print(X)
+    print(y)    
+
+    model = Perceptron(eta, epoch)
+
+    model.fit(X, y)
+
+    _ = model.total_loss()
+
+    model.predict(X)
+
+    save_model(model, file_name)
+
+    save_plot(df, plot_name, model)
+
 def prepare_data(df):
   X = df.drop("y",axis=1)
 

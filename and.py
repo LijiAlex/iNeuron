@@ -1,26 +1,9 @@
-from utils.model import Perceptron
-from utils.all_utils import *
+from utils.all_utils import createModel
 
 def main(data, eta, epoch, file_name, plot_name):
+    createModel(data, eta, epoch, file_name, plot_name)
+
     
-
-    df = pd.DataFrame(data)
-
-    X,y = prepare_data(df)
-    print(X)
-    print(y)    
-
-    model = Perceptron(eta, epochs)
-
-    model.fit(X, y)
-
-    _ = model.total_loss()
-
-    model.predict(X)
-
-    save_model(model, file_name)
-
-    save_plot(df, plot_name, model)
 
 if __name__ == '__main__': ##entry point
     AND = {
@@ -32,4 +15,4 @@ if __name__ == '__main__': ##entry point
     ETA = 0.3 # learning rate between 0 and 1 (assume)
     EPOCHS = 10
 
-    main(data=AND, eta=ETA, epoch=EPOCHS, file_name="and.model", plot_name="plot.png")
+    main(data=AND, eta=ETA, epoch=EPOCHS, file_name="and.model", plot_name="and.png")
