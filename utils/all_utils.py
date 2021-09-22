@@ -35,6 +35,14 @@ def createModel(data, eta, epoch, file_name, plot_name, no_of_input=2):
       save_plot(df, plot_name, model)
 
 def prepare_data(df):
+  """It is used to seperate dependent variables and independent variables
+
+  Args:
+      df (pd.DataFrame): its the pandas DataFrame
+
+  Returns:
+      tuple: it returns the tuples of dependent variables and independent variables
+  """
   X = df.drop("y",axis=1)
 
   y=df["y"]
@@ -42,6 +50,12 @@ def prepare_data(df):
   return X, y
 
 def save_model(model, filename):
+  """This saves the trained model
+
+  Args:
+      model (Python Object): Trained Model
+      filename (str): path to save the trained model
+  """
   model_dir = "models"
   os.makedirs(model_dir,exist_ok=True) #create only if model directory dosent exists
   filePath = os.path.join(model_dir, filename)
