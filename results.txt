@@ -106,3 +106,9 @@ eta = 0.3 epochs =10
 total loss = 2
 MODEL CREATION FAILED, Try with different, epochs, learning rate or a different approach altogether
 ****************************************
+BEGIN CREATION :not.model
+****************************************
+eta = 0.3 epochs =10
+total loss = 0
+MODEL CREATION SUCCESSFUL
+****************************************

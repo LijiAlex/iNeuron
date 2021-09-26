@@ -10,18 +10,25 @@ from utils.model import Perceptron
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
+import logging
+import os
 
-def createModel(data, eta, epoch, file_name, plot_name, no_of_input=2):    
-    with open("results.txt",'a') as f:
-        f.write("BEGIN CREATION :"+file_name+"\n")        
-        f.write("****" * 10+"\n")
-        f.write("eta = "+str(eta)+" epochs ="+str(epoch)+"\n")
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s] %(message)s"
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+logging.basicConfig(filename = os.path.join(log_dir,"running_logs.log"),level=logging.INFO, format=logging_str)
+
+
+def createModel(data, eta, epoch, file_name, plot_name, no_of_input=2):       
+      
+    logging.info(f"\n\n>>>>>>>>>>Starting training>>>>>>>>>>>>>>>>{file_name}")
+    logging.info(f"eta = {str(eta)} epochs ={str(epoch)}\n")
 
     df = pd.DataFrame(data)
 
     X,y = prepare_data(df)
-    print(X)
-    print(y)    
+    logging.info(f"X={X}")
+    logging.info(f"Y={y}")    
 
     model = Perceptron(eta, epoch, no_of_input)
 
@@ -33,8 +40,8 @@ def createModel(data, eta, epoch, file_name, plot_name, no_of_input=2):
 
     save_model(model, file_name)
 
-    with open("results.txt",'a') as f:
-        f.write("****" * 10+"\n")
+    
+    logging.info(f">>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 
     if no_of_input == 2:
       save_plot(df, plot_name, model)
@@ -64,10 +71,17 @@ def save_model(model, filename):
   model_dir = "models"
   os.makedirs(model_dir,exist_ok=True) #create only if model directory dosent exists
   filePath = os.path.join(model_dir, filename)
-  print(filePath)
+  logging.info(filePath)
   joblib.dump(model, filePath)
 
 def save_plot(df, file_name, model):
+  """[saves the plot]
+
+  Args:
+      df ([pandas df]): [its a dataframe]
+      file_name ([string]): [its path to save the plot]
+      model ([model object]): [trained model]
+  """
 
   def _create_base_plot(df):
     #plot scatter plot of df 
