@@ -6,13 +6,13 @@ email : liji.alex@gmail.com
 import os
 import joblib
 import pandas as pd
-#from utils.model import Perceptron
+from utils.model import Perceptron
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import ListedColormap
 import logging
 import os
-from oneNeuron.perceptron import Perceptron
+#from oneNeuron.perceptron import Perceptron
 
 logging_str = "[%(asctime)s: %(levelname)s: %(module)s] %(message)s"
 log_dir = "logs"

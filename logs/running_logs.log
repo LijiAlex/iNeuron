@@ -701,3 +701,162 @@ Name: y, dtype: int64
 
 [2021-09-27 07:06:02,168: INFO: all_utils] models\or.model
 [2021-09-27 07:06:02,180: INFO: all_utils] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,020: INFO: all_utils] 
+
+>>>>>>>>>>Starting training>>>>>>>>>>>>>>>>and.model
+[2021-09-30 06:35:16,020: INFO: all_utils] eta = 0.3 epochs =10
+
+[2021-09-30 06:35:16,051: INFO: all_utils] X=   x1  x2
+0   0   0
+1   0   1
+2   1   0
+3   1   1
+[2021-09-30 06:35:16,051: INFO: all_utils] Y=0    0
+1    0
+2    0
+3    1
+Name: y, dtype: int64
+[2021-09-30 06:35:16,051: INFO: model] initial weights before training: [-1.09956385e-04 -5.57518656e-05  2.25487170e-05]
+[2021-09-30 06:35:16,051: INFO: model] X with bias: 
+[[ 0.  0. -1.]
+ [ 0.  1. -1.]
+ [ 1.  0. -1.]
+ [ 1.  1. -1.]]
+[2021-09-30 06:35:16,067: INFO: model] ____________________
+[2021-09-30 06:35:16,067: INFO: model] for epoch:0
+[2021-09-30 06:35:16,067: INFO: model] ____________________
+[2021-09-30 06:35:16,072: INFO: model] predicted value after forward pass: 
+[0 0 0 0]
+[2021-09-30 06:35:16,073: INFO: model] error: 
+0    0
+1    0
+2    0
+3    1
+Name: y, dtype: int64
+[2021-09-30 06:35:16,075: INFO: model] corrected weights after epoch:0/10 :[ 0.29989004  0.29994425 -0.29997745] 
+[2021-09-30 06:35:16,076: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,076: INFO: model] ____________________
+[2021-09-30 06:35:16,076: INFO: model] for epoch:1
+[2021-09-30 06:35:16,076: INFO: model] ____________________
+[2021-09-30 06:35:16,077: INFO: model] predicted value after forward pass: 
+[1 1 1 1]
+[2021-09-30 06:35:16,080: INFO: model] error: 
+0   -1
+1   -1
+2   -1
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,081: INFO: model] corrected weights after epoch:1/10 :[-1.09956385e-04 -5.57518656e-05  6.00022549e-01] 
+[2021-09-30 06:35:16,082: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,082: INFO: model] ____________________
+[2021-09-30 06:35:16,082: INFO: model] for epoch:2
+[2021-09-30 06:35:16,083: INFO: model] ____________________
+[2021-09-30 06:35:16,083: INFO: model] predicted value after forward pass: 
+[0 0 0 0]
+[2021-09-30 06:35:16,086: INFO: model] error: 
+0    0
+1    0
+2    0
+3    1
+Name: y, dtype: int64
+[2021-09-30 06:35:16,087: INFO: model] corrected weights after epoch:2/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,087: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,088: INFO: model] ____________________
+[2021-09-30 06:35:16,088: INFO: model] for epoch:3
+[2021-09-30 06:35:16,090: INFO: model] ____________________
+[2021-09-30 06:35:16,091: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,093: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,094: INFO: model] corrected weights after epoch:3/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,094: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,094: INFO: model] ____________________
+[2021-09-30 06:35:16,094: INFO: model] for epoch:4
+[2021-09-30 06:35:16,094: INFO: model] ____________________
+[2021-09-30 06:35:16,095: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,096: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,097: INFO: model] corrected weights after epoch:4/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,097: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,097: INFO: model] ____________________
+[2021-09-30 06:35:16,098: INFO: model] for epoch:5
+[2021-09-30 06:35:16,098: INFO: model] ____________________
+[2021-09-30 06:35:16,098: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,099: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,100: INFO: model] corrected weights after epoch:5/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,100: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,100: INFO: model] ____________________
+[2021-09-30 06:35:16,101: INFO: model] for epoch:6
+[2021-09-30 06:35:16,101: INFO: model] ____________________
+[2021-09-30 06:35:16,101: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,103: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,103: INFO: model] corrected weights after epoch:6/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,103: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,104: INFO: model] ____________________
+[2021-09-30 06:35:16,104: INFO: model] for epoch:7
+[2021-09-30 06:35:16,104: INFO: model] ____________________
+[2021-09-30 06:35:16,104: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,106: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,107: INFO: model] corrected weights after epoch:7/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,108: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,108: INFO: model] ____________________
+[2021-09-30 06:35:16,108: INFO: model] for epoch:8
+[2021-09-30 06:35:16,108: INFO: model] ____________________
+[2021-09-30 06:35:16,109: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,110: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,111: INFO: model] corrected weights after epoch:8/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,111: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,111: INFO: model] ____________________
+[2021-09-30 06:35:16,112: INFO: model] for epoch:9
+[2021-09-30 06:35:16,112: INFO: model] ____________________
+[2021-09-30 06:35:16,112: INFO: model] predicted value after forward pass: 
+[0 0 0 1]
+[2021-09-30 06:35:16,114: INFO: model] error: 
+0    0
+1    0
+2    0
+3    0
+Name: y, dtype: int64
+[2021-09-30 06:35:16,115: INFO: model] corrected weights after epoch:9/10 :[0.29989004 0.29994425 0.30002255] 
+[2021-09-30 06:35:16,115: INFO: model] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2021-09-30 06:35:16,119: INFO: model] Total loss : 0
+[2021-09-30 06:35:16,120: INFO: model] MODEL CREATION SUCCESSFUL
+[2021-09-30 06:35:16,120: INFO: model] total loss = 0
+
+[2021-09-30 06:35:16,120: INFO: model] MODEL CREATION SUCCESSFUL
+
+[2021-09-30 06:35:16,121: INFO: all_utils] models\and.model
+[2021-09-30 06:35:16,124: INFO: all_utils] >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
