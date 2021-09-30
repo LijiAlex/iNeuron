@@ -10,6 +10,12 @@ XOR tried with different learning rates and epochs, but implementation not worki
 ## Add URL -
 [Git handbook](https://guides.github.com/introduction/git-handbook/)
 
+# References -
+[official python docs](https://packaging.python.org/tutorials/packaging-projects/)
+
+[github docs for github actions] (https://docs.github.com/en/actions/guides/building-and-testing-python#publishing-to-package-registries)
+
+
 
 ## Add image -
 ![sample image](plots/and.png)
